@@ -1,0 +1,5 @@
+{
+	"name": "jquery-serializeobject",
+	"description" : "convert form data into a javascript object.",
+	"license" : "MIT"
+}
