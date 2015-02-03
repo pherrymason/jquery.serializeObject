@@ -1,0 +1,31 @@
+{
+  "name": "jquery-serializeobject",
+  "version": "1.0.0",
+  "homepage": "https://github.com/raulferras/jquery.serializeObject",
+  "authors": [
+    "Raúl Ferràs <raul.ferras@gmail.com>"
+  ],
+  "description": "jQuery plugin to serialize Form into JSON.",
+  "main": "jquery.serializeobject.json",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "jquery",
+    "serialize",
+    "json",
+    "form"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=1.11.2 <2.0"
+  }
+}
