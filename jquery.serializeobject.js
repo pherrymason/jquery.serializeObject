@@ -18,7 +18,7 @@
 }(function ($) {
     'use strict';
     $.fn.serializeObject = function (options) {
-        options = $.extend({strict: true}, options);
+        options = $.extend({strict: false}, options);
 
         var self = this;
         var json = {};
