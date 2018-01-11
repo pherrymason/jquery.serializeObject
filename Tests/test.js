@@ -12,6 +12,8 @@ describe('Serialize test', function () {
         expect(data.password).toBeDefined();
         expect(data.email).toBeDefined();
         expect(data.gender).toBeDefined();
+        expect(data.age).toBeDefined();
+        expect(data[24]).toBeDefined();
         expect(data['_family']).toBeDefined();
         expect(data['_sub-family']).toBeDefined();
 
@@ -19,6 +21,10 @@ describe('Serialize test', function () {
         expect(data.password).toBe('123456');
         expect(data.email).toBe('john.doe@smith.com');
         expect(data.gender).toBe('male');
+        expect(data.age).toBe('3');
+        expect(data[24]).toBe('twentyfour');
+        expect(data['_family']).toBe('mechanics');
+        expect(data['_sub-family']).toBe('joints');
     });
 
     it('obtains a json object from a multidimensional form in non strict mode', function () {

@@ -1,7 +1,7 @@
 /**
  * Serializes data from a Form element into JSON object.
  *
- * Based on `Yann` code. I just commented the `fixed` check so everything converts into object.
+ * Based on `Yann` code.
  * @author http://css-tricks.com/snippets/jquery/serialize-form-to-json/#comment-210474
  */
 (function (factory) {
@@ -72,6 +72,10 @@
                 // push
                 if (k.match(patterns.push)) {
                     merge = self.build([], self.push_counter(reverse_key), merge);
+                }
+                // fixed
+                else if(k.match(patterns.fixed)){
+                    merge = self.build([], k, merge);
                 }
                 // named
                 else if (k.match(patterns.named)) {
