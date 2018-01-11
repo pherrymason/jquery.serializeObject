@@ -11,10 +11,12 @@ describe('Serialize test', function () {
         expect(data.name).toBeDefined();
         expect(data.password).toBeDefined();
         expect(data.email).toBeDefined();
+        expect(data.gender).toBeDefined();
 
         expect(data.name).toBe('John');
         expect(data.password).toBe('123456');
         expect(data.email).toBe('john.doe@smith.com');
+        expect(data.gender).toBe('male');
     });
 
     it('obtains a json object from a multidimensional form', function () {
@@ -24,10 +26,12 @@ describe('Serialize test', function () {
         expect(data.formLogin.name).toBeDefined();
         expect(data.formLogin.password).toBeDefined();
         expect(data.formLogin.email).toBeDefined();
+        expect(data.formLogin.gender).toBeDefined();
 
         expect(data.formLogin.name).toBe('John');
         expect(data.formLogin.password).toBe('123456');
         expect(data.formLogin.email).toBe('john.doe@smith.com');
+        expect(data.formLogin.gender).toBe('female');
     });
 });
 
