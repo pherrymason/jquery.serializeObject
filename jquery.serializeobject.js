@@ -8,7 +8,7 @@
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
         define(['jquery'], factory);
-    } else if(typeof exports==='object') {
+    } else if (typeof exports === 'object') {
         // CommonJS
         factory(require('jquery'));
     } else {
@@ -16,18 +16,19 @@
         factory(jQuery);
     }
 }(function ($) {
+    'use strict';
     $.fn.serializeObject = function (options) {
-		options = $.extend({}, options);
+        options = $.extend({}, options);
 
-        var self = this,
-        json = {},
-        push_counters = {},
-        patterns = {
+        var self = this;
+        var json = {};
+        var push_counters = {};
+        var patterns = {
             "validate": /^[a-zA-Z][a-zA-Z0-9_]*(?:\[(?:\d*|[a-zA-Z0-9_]+)\])*$/,
-            "key":      /[a-zA-Z0-9_]+|(?=\[\])/g,
-            "push":     /^$/,
-            "fixed":    /^\d+$/,
-            "named":    /^[a-zA-Z0-9_]+$/
+            "key": /[a-zA-Z0-9_]+|(?=\[\])/g,
+            "push": /^$/,
+            "fixed": /^\d+$/,
+            "named": /^[a-zA-Z0-9_]+$/
         };
 
         this.build = function (base, key, value) {
@@ -35,8 +36,8 @@
             return base;
         };
 
-        this.push_counter = function(key) {
-            if(push_counters[key] === undefined) {
+        this.push_counter = function (key) {
+            if (push_counters[key] === undefined) {
                 push_counters[key] = 0;
             }
             return push_counters[key]++;
@@ -45,17 +46,16 @@
         $.each($(this).serializeArray(), function () {
 
             // Skip invalid keys
-            if(!patterns.validate.test(this.name)) {
+            if (!patterns.validate.test(this.name)) {
                 return;
             }
 
-            var
-            k,
-            keys = this.name.match(patterns.key),
-            merge= this.value,
-            reverse_key = this.name;
+            var k;
+            var keys = this.name.match(patterns.key);
+            var merge = this.value;
+            var reverse_key = this.name;
 
-            while (( k = keys.pop() )!==undefined ) {
+            while ((k = keys.pop()) !== undefined) {
                 // adjust reverse key
                 reverse_key = reverse_key.replace(new RegExp("\\[" + k + "\\]$"), '');
 
