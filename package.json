@@ -1,0 +1,31 @@
+{
+  "name": "jquery.serializeobject",
+  "version": "1.2.0",
+  "description": "Get JSON object from a form",
+  "main": "jquery.serializeobject.js",
+  "scripts": {
+    "test": "jest --config jest.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raulferras/jquery.serializeObject.git"
+  },
+  "keywords": [
+    "jquery",
+    "plugin",
+    "serialize",
+    "json"
+  ],
+  "author": "Raúl Ferràs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raulferras/jquery.serializeObject/issues"
+  },
+  "homepage": "https://github.com/raulferras/jquery.serializeObject#readme",
+  "devDependencies": {
+    "jest": "^22.0.5"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
