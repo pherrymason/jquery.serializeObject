@@ -1,5 +1,5 @@
 /* jshint node: true, strict: true */
-const FormBuilder = require('./formBuilder');
+const FormBuilder = require('./helpers/formBuilder');
 require('./../jquery.serializeobject');
 
 
