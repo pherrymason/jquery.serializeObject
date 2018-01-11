@@ -8,6 +8,8 @@ module.exports = {
         $form.append('<input name="email" value="john.doe@smith.com"/>');
         $form.append('<input name="gender" type="radio" checked value="male"/>');
         $form.append('<input name="gender" type="radio" value="female"/>');
+        $form.append('<input name="_family" value="mechanics"/>');
+        $form.append('<input name="_sub-family" value="joints"/>');
 
         return $form;
     },

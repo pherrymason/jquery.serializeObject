@@ -4,7 +4,7 @@ require('./../jquery.serializeobject');
 
 
 describe('Serialize test', function () {
-    it('obtains a json object from a plain form', function () {
+    it('obtains a json object from a plain form in non strict mode', function () {
         const $form = FormBuilder.getPlainForm();
         const data = $form.serializeObject();
 
@@ -12,6 +12,8 @@ describe('Serialize test', function () {
         expect(data.password).toBeDefined();
         expect(data.email).toBeDefined();
         expect(data.gender).toBeDefined();
+        expect(data['_family']).toBeDefined();
+        expect(data['_sub-family']).toBeDefined();
 
         expect(data.name).toBe('John');
         expect(data.password).toBe('123456');
@@ -19,7 +21,7 @@ describe('Serialize test', function () {
         expect(data.gender).toBe('male');
     });
 
-    it('obtains a json object from a multidimensional form', function () {
+    it('obtains a json object from a multidimensional form in non strict mode', function () {
         const $form = FormBuilder.getMultidimensionalForm();
         const data = $form.serializeObject();
 

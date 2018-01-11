@@ -18,18 +18,28 @@
 }(function ($) {
     'use strict';
     $.fn.serializeObject = function (options) {
-        options = $.extend({}, options);
+        options = $.extend({strict: true}, options);
 
         var self = this;
         var json = {};
         var push_counters = {};
         var patterns = {
-            "validate": /^[a-zA-Z][a-zA-Z0-9_]*(?:\[(?:\d*|[a-zA-Z0-9_]+)\])*$/,
-            "key": /[a-zA-Z0-9_]+|(?=\[\])/g,
+            "validate": /^[a-zA-Z0-9_\-]*(?:\[(?:\d*|[a-zA-Z0-9_\-]+)\])*$/,
+            "key": /[a-zA-Z0-9_\-]+|(?=\[\])/g,
             "push": /^$/,
             "fixed": /^\d+$/,
-            "named": /^[a-zA-Z0-9_]+$/
+            "named": /^[a-zA-Z0-9_\-]+$/
         };
+
+        if (options.strict) {
+            patterns = {
+                "validate": /^[a-zA-Z][a-zA-Z0-9_]*(?:\[(?:\d*|[a-zA-Z0-9_]+)\])*$/,
+                "key": /[a-zA-Z0-9_]+|(?=\[\])/g,
+                "push": /^$/,
+                "fixed": /^\d+$/,
+                "named": /^[a-zA-Z0-9_]+$/
+            };
+        }
 
         this.build = function (base, key, value) {
             base[key] = value;
